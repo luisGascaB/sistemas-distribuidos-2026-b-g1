@@ -7,7 +7,7 @@ Your weekly grade is read AUTOMATICALLY from this file:
 
 - FULL_NAME: Luis Eduardo Gasca Bonilla
 - GITHUB_USER: luisGascaB
-- TEAM: bysellens
+- TEAM:By_sellens
 - SPRINT_GOAL: Update and consolidate the UML diagrams to support the planned microservice architecture and MVP implementation.
 
 ## 1. User stories worked this week
