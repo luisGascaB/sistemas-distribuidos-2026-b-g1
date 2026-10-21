@@ -14,13 +14,23 @@ The current instrumentation keeps bounded, in-memory metrics for the browser ses
 
 Metrics use event and outcome only. They must not be labeled by trace ID, product name, search text, or operator identity because those values create privacy and cardinality risks.
 
+### Prometheus export mapping for CP6
+
+The in-memory values above are not themselves Prometheus time series. If a collector/exporter is added, map them to this bounded metric contract:
+
+- `product_portal_operations_total{operation, outcome}` — map each operation/outcome counter to `operation="product_list_load"` or `"stock_adjustment"` and `outcome="success"` or `"error"`.
+- `product_portal_operation_duration_seconds_bucket{operation, le}` — export cumulative duration buckets in seconds for each operation.
+- `product_portal_operation_duration_seconds_count{operation}` — total duration observations for each operation.
+
+Do not add `trace_id`, product identifiers, search strings, or user identities as metric labels. This is a proposed export mapping only; the current browser code does not expose these Prometheus metrics.
+
 ## Suggested service-level objectives
 
 These are proposed targets for later measurement, not observed production results:
 
 - Product list load success rate: at least 99% over a rolling 30-day window.
 - Product list p95 duration: at most 1 second.
-- Stock adjustment success rate: at least 99.5% over a rolling 30-day window.
+- Stock adjustment success rate: at least 99% over a rolling 30-day window.
 - Stock adjustment p95 duration: at most 1 second, excluding user think time.
 
 ## Alert proposals
