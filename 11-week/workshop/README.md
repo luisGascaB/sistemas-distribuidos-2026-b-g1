@@ -6,7 +6,7 @@
 - GITHUB_USER: luisGascaB
 - TEAM: By-sellens
 - DOCS_REPO: https://github.com/code-corhuila/bysellens-docs.git
-- REFLECTION_DOC:
+- REFLECTION_DOC: https://docs.google.com/document/d/1pDzj257_wM2dvqwLQpHMlNffQZ30B5bJ6dBWSifUOCk/edit?usp=sharing
 - JOURNEY: Product Portal administrator loads the stock list, searches/filters products, and adjusts stock; the frontend uses MOCK storage or calls its configured inventory API.
 
 <!-- CONFIG-END -->
