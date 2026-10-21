@@ -1,0 +1,55 @@
+groups:
+  - name: product-portal-slo-burn-rate
+    interval: 1m
+    rules:
+      - alert: ProductPortalAvailabilityFastBurn
+        expr: |
+          (
+            (
+              sum(rate(product_portal_operations_total{outcome="error"}[1h]))
+              /
+              sum(rate(product_portal_operations_total[1h]))
+            ) / 0.01 > 14.4
+          )
+          and
+          (
+            (
+              sum(rate(product_portal_operations_total{outcome="error"}[5m]))
+              /
+              sum(rate(product_portal_operations_total[5m]))
+            ) / 0.01 > 14.4
+          )
+        for: 5m
+        labels:
+          severity: critical
+          team: By-sellens
+        annotations:
+          summary: "Product Portal availability error budget is burning rapidly"
+          description: "Availability burn rate is above 14.4 in both the 1h and 5m windows. This corresponds to approximately 2% of the 30-day error budget per hour."
+          runbook_url: "https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/main/11-week/workshop/05-runbook.md"
+
+      - alert: ProductPortalAvailabilitySlowBurn
+        expr: |
+          (
+            (
+              sum(rate(product_portal_operations_total{outcome="error"}[6h]))
+              /
+              sum(rate(product_portal_operations_total[6h]))
+            ) / 0.01 > 6
+          )
+          and
+          (
+            (
+              sum(rate(product_portal_operations_total{outcome="error"}[30m]))
+              /
+              sum(rate(product_portal_operations_total[30m]))
+            ) / 0.01 > 6
+          )
+        for: 30m
+        labels:
+          severity: warning
+          team: By-sellens
+        annotations:
+          summary: "Product Portal availability error budget is burning steadily"
+          description: "Availability burn rate is above 6 in both the 6h and 30m windows. This corresponds to approximately 5% of the 30-day error budget per 6h."
+          runbook_url: "https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/main/11-week/workshop/05-runbook.md"
