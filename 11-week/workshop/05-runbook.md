@@ -1,118 +1,52 @@
-# Week 11 - CP5: Runbook and operational validation for the sale/stock flow
+# CP5 - Product Portal operational runbook
 
-## Objective
+## Scope
 
-This checkpoint closes the observability workshop by turning the documented architecture, the trace model, the structured logs, and the metrics into an operational runbook for the real business journey selected in the project:
+This runbook covers the Product Portal browser application for consulting and adjusting product stock. The repository is a React/Ionic frontend with MOCK and configured HTTP modes; it does not include the backend service or establish a deployed environment.
 
-- Product portal / admin flow
-- sales-service registers the sale
-- `SaleRegistered` is produced to RabbitMQ
-- product-service processes the event and updates stock
-- `StockUpdated` / `StockDepleted` are emitted and correlated to the same trace
+## Local validation
 
-This runbook is intentionally aligned with the actual workshop journey and with the project evidence used throughout CP0–CP4.
-
-## Operational summary
-
-### Service responsibilities
-
-| Service | Responsibility | Primary observability signals |
-|---|---|---|
-| sales-service | Accept the sale and register it | request counters, latency histograms, business success logs |
-| product-service | Consume the sale event and update stock | stock-update counter, event lag, stock depletion signals |
-| RabbitMQ | Transport the domain event | queue lag, consumer lag, message throughput |
-| PostgreSQL | Persist business state | database writes, commit latency, failed inserts |
-
-## End-to-end validation checklist
-
-Use the following checklist when validating the flow manually or in a test environment:
-
-- [ ] A sale request reaches `sales-service`
-- [ ] A `trace_id` is generated or propagated from the incoming request
-- [ ] The sale request is logged with `event=sale_request_received`
-- [ ] The event is published to RabbitMQ with consistent metadata
-- [ ] `product-service` consumes the event and logs `stock_update_received`
-- [ ] The business result logs `stock_updated` or `stock_depleted`
-- [ ] Counters increment for successful sale registration and stock update
-- [ ] The request latency histogram is updated
-- [ ] RabbitMQ lag remains within alert thresholds
-- [ ] The same `trace_id` can be used to correlate all events across the flow
-
-## Recommended log signal mapping
-
-| Signal | Example event | Required fields |
-|---|---|---|
-| Sale accepted | `SALE_REQUEST_RECEIVED` | `trace_id`, `span_id`, `correlation_id`, `customer_id`, `product_id`, `quantity`, `outcome` |
-| Event published | `SALE_REGISTERED` | `trace_id`, `event_name`, `routing_key`, `message_id`, `outcome` |
-| Stock update received | `STOCK_UPDATE_RECEIVED` | `trace_id`, `span_id`, `product_id`, `quantity`, `outcome` |
-| Stock updated | `STOCK_UPDATED` | `trace_id`, `product_id`, `quantity`, `duration_ms`, `outcome` |
-| Stock depleted | `STOCK_DEPLETED` | `trace_id`, `product_id`, `quantity_remaining`, `outcome` |
-| Sale completion | `SALE_COMPLETED` | `trace_id`, `duration_ms`, `outcome`, `downstream_trace_id` |
-
-## Alert and dashboard decision tree
-
-### If sale registration rate drops
-
-1. Check the `sales_requests_total` and `sales_requests_failed_total` counters.
-2. Review the last 10–30 minutes of logs for failed validations or downstream errors.
-3. Confirm whether the request reached RabbitMQ.
-4. Verify the `trace_id` and `correlation_id` for the failing samples.
-
-### If stock updates slow down
-
-1. Inspect `stock_update_duration_ms` and the histogram buckets.
-2. Check RabbitMQ lag for the `SaleRegistered` queue.
-3. Confirm whether product-service is stuck in a retry loop or DB write delay.
-4. Look for `StockDepleted` events that are abnormal or unexpected.
-
-### If the business flow is blocked
-
-1. Start with the failing `trace_id`.
-2. Review the log sequence across sales-service and product-service.
-3. Validate the event publication in RabbitMQ.
-4. Check PostgreSQL or inventory persistence writes.
-5. Confirm whether the same correlation identifier appears in the logs and metrics.
-
-## Validation commands
-
-These commands are the minimum practical validation set for the workshop sample implemented in CP3.
+Run from the `bysellens-product-portal` repository:
 
 ```bash
-cd 11-week/workshop/03-instrumentation
-npm test
-npm run start
+npm ci
+npm run test.unit
+npm run lint
+npm run build
+npm run dev
 ```
 
-Expected result:
+Use the README's MOCK-mode login instructions. Confirm that the stock page loads, name/code search and stock filters work, and valid adjustments update the displayed quantity. Confirm invalid quantities and decrements exceeding stock are rejected.
 
-- Tests pass with zero failures
-- The demo emits structured logs for the sale and stock path
-- The same `trace_id` is preserved across the sample flow
+## Troubleshooting
 
-## Production readiness checklist
+### Product list fails to load
 
-Before treating this as a live system strategy, confirm the following:
+1. Check the browser console for a `product_list_load` error record and note its `trace_id`.
+2. Confirm whether the app is in MOCK or real mode.
+3. In MOCK mode, check local storage and reproduce with a clean test session if needed.
+4. In real mode, verify `VITE_API_BASE_URL`, the `GET /api/productos` response, CORS, and whether the server accepts `traceparent`.
+5. Do not treat client-side trace logging as proof that the backend received or recorded the trace.
 
-- [ ] W3C `traceparent` propagation is implemented for HTTP requests
-- [ ] Message metadata preserves `trace_id`, `correlation_id`, and `causation_id`
-- [ ] Structured log keys are consistent across services
-- [ ] PII or sensitive customer data is never logged
-- [ ] Business metrics and infrastructure metrics share the same trace lineage
-- [ ] Alerts are tied to specific service owners and documented runbook steps
-- [ ] Dashboard panels include both failure rate and latency
-- [ ] Stock depletion events are reviewed for business exceptions and recovery paths
+### Stock adjustment fails
 
-## Final workshop evidence summary
+1. Check the `stock_adjustment` result and `trace_id`.
+2. Confirm the quantity is an integer greater than zero and a decrement does not exceed the displayed stock.
+3. In MOCK mode, verify the local mock update.
+4. In real mode, inspect the configured `PUT /api/inventario/{id}/{operacion}` response and request `cantidad`.
+5. Check endpoint compatibility: the Product Service draft API describes different `/api/v1/products/...` routes, so the portal/backend integration must be reconciled before production claims.
 
-This workshop has established the following real evidence chain:
+### Trace cannot be followed beyond the browser
 
-1. The real business path is documented in the architecture repo and selected for observability work.
-2. The journey was mapped into a traceable event flow from `sales-service` to `product-service`.
-3. A structured log contract was defined and used consistently.
-4. A minimal instrumentation sample was implemented and validated with working output.
-5. Metrics and alert rules were defined for the same business flow.
-6. The final runbook connects all of them into a closeable operational workflow.
+Confirm that the browser request includes W3C `traceparent`, CORS permits that header, and the backend extracts/propagates it. If any of these are missing, the browser trace ends at the HTTP boundary.
 
-## Conclusion
+## Operational limitations
 
-This final checkpoint closes the workshop loop: the system is no longer just described as a flow, but also instrumented, observed, and prepared for operational diagnosis. The tracing logic, logs, metrics, and alerting strategy all align with the same product journey and are ready to be extended into a real runtime implementation when the project services are available.
+- The portal's counters and histograms are in-memory and browser-session scoped.
+- No centralized exporter, dashboard, or alert receiver is configured by this change.
+- Product Service documentation marks backend implementation and runtime verification pending.
+- Do not use mock-mode success as evidence of a successful backend stock update.
+
+## Completion evidence
+
+The local implementation is verified by unit tests, lint, and production build. End-to-end validation against a deployed Product Service requires a compatible backend, environment configuration, and CORS/trace propagation checks.

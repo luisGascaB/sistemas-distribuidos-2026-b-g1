@@ -7,7 +7,7 @@
 - TEAM: By-sellens
 - DOCS_REPO: https://github.com/code-corhuila/bysellens-docs.git
 - REFLECTION_DOC:
-- JOURNEY: Product portal -> sales-service -> product-service -> inventory-service -> RabbitMQ; sale registration and stock update after the sale
+- JOURNEY: Product Portal administrator loads the stock list, searches/filters products, and adjusts stock; the frontend uses MOCK storage or calls its configured inventory API.
 
 <!-- CONFIG-END -->
 
@@ -19,7 +19,7 @@ The architecture evidence used for this workshop comes from the official project
 
 - https://github.com/code-corhuila/bysellens-docs.git
 
-The selected critical journey is the documented sale flow in which the administrator registers a sale and the stock is updated as a consequence of the transaction. The journey starts from the product/administrative portal and crosses the service boundaries defined in the project design.
+The selected journey is the implemented Product Portal workflow: the administrator opens the stock view, loads active products, searches or filters the list, and increases or decreases stock. The portal is a React/Ionic frontend for the product module; its repository documents MOCK behavior and a configured HTTP API, but does not include the backend service or prove a deployed integration.
 
 ## Reflection requirement
 

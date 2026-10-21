@@ -1,35 +1,24 @@
-# How to run the instrumentation demo
+# CP3 - Run and verify Product Portal instrumentation
 
-## Prerequisites
+The instrumentation is implemented in the Product Portal repository, not in a standalone mock sales-service sample.
 
-- Node.js 18 or newer
-
-## Install
+## Run from the Product Portal repository
 
 ```bash
-npm install
+npm ci
+npm run test.unit
+npm run lint
+npm run build
+npm run dev
 ```
 
-## Run the demo
+Open the Vite URL printed in the terminal, sign in using the repository's MOCK-mode instructions, load the stock view, and try a stock adjustment. The browser console should show structured `product-portal` records with trace and span IDs.
 
-```bash
-npm run start
-```
+## Instrumentation files
 
-## Run the tests
+- `src/services/observabilidad.ts`: W3C trace context, structured JSON logs, in-memory counters and duration histogram buckets.
+- `src/services/productoService.ts`: wraps list/adjustment operations and sends `traceparent` in configured real-mode HTTP requests.
+- `src/services/observabilidad.test.ts`: checks trace format, trace-parent preservation, success/error logging, and counters.
+- `src/services/dominio.test.ts`: checks the real-mode stock request carries a valid `traceparent`.
 
-```bash
-npm test
-```
-
-## What this demo shows
-
-This demo models the real `sales-service` -> `product-service` flow described in the project architecture:
-
-- a sale request is received
-- a trace is created with W3C `traceparent`
-- the downstream product-service logic consumes the same trace context
-- a structured log is emitted
-- a request counter and latency histogram are updated
-
-The sample is intentionally small and educational, but it follows the actual project pattern of a distributed business flow across multiple bounded contexts.
+MOCK mode exercises local storage and client telemetry only. It does not make a backend request. Real-mode propagation still requires compatible backend handling and CORS configuration.
