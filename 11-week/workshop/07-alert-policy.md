@@ -21,7 +21,7 @@ The Prometheus metric contract is `product_portal_operations_total{operation, ou
 - **Severity/team:** `critical` / `By-sellens`.
 - **Budget meaning:** at a constant burn rate of 14.4, 1 hour consumes `14.4 × 1 / 720 = 2%` of a 30-day budget.
 - **Illustrative CP6 budget:** 2% of 7.5 failed operations is `0.15` operation; 2% of 144 minutes is `2.88` minutes. These are expected budget consumption at that burn rate, not a promise that a fraction of a request can fail.
-- **Interpretation:** investigate promptly using the trace ID and the CP5 runbook. The second, short window confirms that the elevated rate is still occurring rather than only reflecting an older one-hour incident.
+- **Interpretation:** investigate promptly using the trace ID and the CP8 runbook. The second, short window confirms that the elevated rate is still occurring rather than only reflecting an older one-hour incident.
 
 ## Slow burn alert
 
