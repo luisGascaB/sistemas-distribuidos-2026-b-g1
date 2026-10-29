@@ -15,7 +15,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 - SECURITY_STORY_3_URL: [PENDING]
 - REFLECTION_DOCUMENT_URL: [PENDING: provide the Week 13 document link]
 - DOCS_REPOSITORY: https://github.com/code-corhuila/bysellens-docs
-- STRIDE_DOCUMENT_URL: https://github.com/code-corhuila/bysellens-docs/blob/security/stride-luisGascaB/05-architecture/security/stride-luisGascaB.md
+- STRIDE_DOCUMENT_URL: https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/hu-luisGascaB-main/13-week/workshop/02-stride.md
 - PEER_REVIEW_URL: [PENDING: only after reviewing a real teammate PR]
 - BOOK_REFERENCE: [PENDING: verify page(s) in the physical copy before citing]
 <!-- CONFIG-END -->
@@ -26,7 +26,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 |---|---|---|
 | CP0 — Preparation | In progress | Issue #56 records the selected boundary; repository branches, PRs, and documentation-repo access remain unverified. |
 | CP1 — Attack surface | Draft prepared | `01-attack-surface.md`; confirm the authoritative implementation repository before treating the snapshot as canonical. |
-| CP2 — STRIDE | Analysis complete | All six categories, prioritization and conditional residual-risk targets are in the linked docs branch; physical-book page citation remains pending verification. |
+| CP2 — STRIDE | Analysis complete (design-based) | [`02-stride.md`](./02-stride.md) contains all six categories, prioritization and conditional residual-risk targets; physical-book page citation remains pending verification. |
 | CP3 — Security stories | Pending | Rank evidence-based STRIDE risks and check existing issues before creating any. |
 | CP4 — Security CI | Pending | Select tools and an authorization test from the confirmed implementation and its real protected operations. |
 | CP5 — Peer review | Pending | Requires a teammate's actual pull request and approval before posting a review. |
