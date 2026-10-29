@@ -25,7 +25,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 | Checkpoint | Status | Evidence / blocker |
 |---|---|---|
 | CP0 — Preparation | In progress | Issue #56 records the selected boundary; repository branches, PRs, and documentation-repo access remain unverified. |
-| CP1 — Attack surface | Pending | Confirm the authoritative implementation repository and distinguish it from architecture documentation. |
+| CP1 — Attack surface | Draft prepared | `01-attack-surface.md`; confirm the authoritative implementation repository before treating the snapshot as canonical. |
 | CP2 — STRIDE | Pending | Requires an available trust boundary and access to the documentation repository. |
 | CP3 — Security stories | Pending | Rank evidence-based STRIDE risks and check existing issues before creating any. |
 | CP4 — Security CI | Pending | Select tools and an authorization test from the confirmed implementation and its real protected operations. |
