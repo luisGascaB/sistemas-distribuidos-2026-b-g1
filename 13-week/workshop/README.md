@@ -33,7 +33,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP5 — Peer review | Review prepared; submission pending | [`05-peer-review.md`](./05-peer-review.md) records review of teammate PR #66 and a non-blocking scoring suggestion; the formal GitHub review has not been submitted. |
 | CP6 — Review feedback | Partially evidenced | [`06-review-feedback.md`](./06-review-feedback.md) records real feedback and the author's response on teammate PR #66; the participant's own CP5 review remains unsubmitted. |
 | CP7 — Refine security backlog | Refinement prepared; GitHub updates pending | [`07-security-backlog-refinement.md`](./07-security-backlog-refinement.md) contains testable criteria, target STRIDE/risk labels, PR links, and cross-links; issue edits and team Project membership still need applying and verifying. |
-| CP8 — Negative test | Pending | Requires the CP4 negative authorization test to run against the real service and its output to be recorded. |
+| CP8 — Negative test | Provisional test passed; canonical service unverified | [`08-negative-authorization-test.md`](./08-negative-authorization-test.md) records three passing MockMvc checks against the available `catalogo-service` snapshot. Identify the authoritative `product-service` and verify there before marking CP8 complete. |
 | CP9 — Personal reflection | Student-authored | Write the reflection personally; AI must not draft or rewrite it. |
 
 ## Selected trust boundary

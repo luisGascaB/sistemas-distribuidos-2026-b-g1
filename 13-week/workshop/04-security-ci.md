@@ -15,11 +15,12 @@ paths. The inspected catalog service has product routes under
 `/api/productos` and stock routes under `/api/inventario`; it does not implement
 the documented `/api/v1/products` contract.
 
-The snapshot has no project-level GitHub Actions workflow and no controller
-authorization tests. Its only catalog-service test is a domain unit test. The
-course repository contains workshop documentation, not the Java application.
-Therefore this checkpoint records a pipeline proposal; it does not claim that a
-security workflow or authorization test has been added to the application.
+The snapshot has no project-level GitHub Actions workflow. Its only original
+catalog-service test was a domain unit test; CP8 now adds a MockMvc
+authorization test to this local snapshot. The course repository contains
+workshop documentation, not the Java application. The snapshot has no Git
+repository and is not confirmed as the authoritative Product implementation,
+so no workflow or test is claimed as committed to the canonical application.
 
 ## Selected CI tools
 
@@ -101,5 +102,6 @@ the documented `product-service`.
   repository.
 - [ ] Run the new authorization tests in CI and record the actual check result.
 
-Until the implementation repository is confirmed and the final two checks pass,
-CP4 remains **design prepared, implementation pending**.
+Until the implementation repository is confirmed and the workflow/CI checks
+pass there, CP4 remains **design prepared, implementation pending**. The CP8
+test is provisional evidence for the available `catalogo-service` snapshot.
