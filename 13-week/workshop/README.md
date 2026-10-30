@@ -30,7 +30,8 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP3 — Security stories | In progress | [`03-security-backlog.md`](./03-security-backlog.md) maps existing issues #57/#58 and drafts a distinct auditability story; its tracker issue is pending. |
 | CP4 — Security CI | Design prepared; implementation pending | [`04-security-ci.md`](./04-security-ci.md) records the Java/Maven CI design and authorization matrix for the available snapshot; the authoritative application repository is not confirmed, so no workflow or auth test is claimed as implemented. |
 | CP5 — Peer review | Review prepared; submission pending | [`05-peer-review.md`](./05-peer-review.md) records review of teammate PR #66 and a non-blocking scoring suggestion; the formal GitHub review has not been submitted. |
-| CP6–CP8 — Completion | Pending | Requires real review feedback, executed checks, and recorded output. |
+| CP6 — Review feedback | Partially evidenced | [`06-review-feedback.md`](./06-review-feedback.md) records real feedback and the author's response on teammate PR #66; the participant's own CP5 review remains unsubmitted. |
+| CP7–CP8 — Completion | Pending | Require the remaining review follow-up, executed checks, and recorded output. |
 | CP9 — Personal reflection | Student-authored | Write the reflection personally; AI must not draft or rewrite it. |
 
 ## Selected trust boundary
