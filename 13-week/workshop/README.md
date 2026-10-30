@@ -28,7 +28,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP1 — Attack surface | Draft prepared | `01-attack-surface.md`; confirm the authoritative implementation repository before treating the snapshot as canonical. |
 | CP2 — STRIDE | Analysis complete (design-based) | [`02-stride.md`](./02-stride.md) contains all six categories, prioritization and conditional residual-risk targets; physical-book page citation remains pending verification. |
 | CP3 — Security stories | In progress | [`03-security-backlog.md`](./03-security-backlog.md) maps existing issues #57/#58 and drafts a distinct auditability story; its tracker issue is pending. |
-| CP4 — Security CI | Pending | Select tools and an authorization test from the confirmed implementation and its real protected operations. |
+| CP4 — Security CI | Design prepared; implementation pending | [`04-security-ci.md`](./04-security-ci.md) records the Java/Maven CI design and authorization matrix for the available snapshot; the authoritative application repository is not confirmed, so no workflow or auth test is claimed as implemented. |
 | CP5 — Peer review | Pending | Requires a teammate's actual pull request and approval before posting a review. |
 | CP6–CP8 — Completion | Pending | Requires real review feedback, executed checks, and recorded output. |
 | CP9 — Personal reflection | Student-authored | Write the reflection personally; AI must not draft or rewrite it. |
