@@ -2,8 +2,8 @@
 
 **Owner:** Luis Gasca Bonilla (`@luisGascaB`)
 **Trust boundary:** React administrative frontend → documented `product-service`
-**Status:** Pipeline and authorization-test design prepared; workflow implementation
-is blocked until the authoritative application repository is confirmed.
+**Status:** Pipeline design prepared; workflow implementation remains pending
+because the selected local application snapshot has no Git repository.
 
 ## Evidence and scope
 
@@ -20,7 +20,9 @@ catalog-service test was a domain unit test; CP8 now adds a MockMvc
 authorization test to this local snapshot. The course repository contains
 workshop documentation, not the Java application. The snapshot has no Git
 repository and is not confirmed as the authoritative Product implementation,
-so no workflow or test is claimed as committed to the canonical application.
+so the test is not claimed as committed to a canonical application repository.
+The user selected this local snapshot as the CP8 target; the route mismatch
+with the documented Product API remains explicit.
 
 ## Selected CI tools
 
@@ -102,6 +104,8 @@ the documented `product-service`.
   repository.
 - [ ] Run the new authorization tests in CI and record the actual check result.
 
-Until the implementation repository is confirmed and the workflow/CI checks
-pass there, CP4 remains **design prepared, implementation pending**. The CP8
-test is provisional evidence for the available `catalogo-service` snapshot.
+The user selected the available snapshot for CP8, but no Git repository is
+available here for adding the proposed workflow. Until the workflow and CI
+checks run in a versioned application repository, CP4 remains **design
+prepared, implementation pending**. The CP8 test verifies only the selected
+snapshot's authorization path.

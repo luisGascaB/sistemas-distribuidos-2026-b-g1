@@ -1,9 +1,9 @@
 # CP8 — Negative Authorization Test
 
-**Status:** Test executed successfully against the available local
-`catalogo-service` snapshot. This is provisional evidence, not verification of
-the documented `product-service`; its authoritative implementation repository
-is still unconfirmed.
+**Status:** CP8 test passed for the local `catalogo-service` snapshot selected
+by the user as the target. This verifies that snapshot's authorization path;
+it does not verify the different `/api/v1/products` contract documented for
+`product-service`.
 
 ## Test performed
 
@@ -50,7 +50,7 @@ environment:
 startup: PASS — MockMvc Spring test context started in 5.607s as part of the Maven test command
 integration: PASS — exit_code: 0, passed: 3, failed: 0, skipped: 0; authorization filter chain and controller routes; mocked decoder/use cases
 e2e: UNVERIFIED — no browser UI; live service and external dependencies were not started
-overall: NEEDS_SIGNOFF — the tests pass against the available catalogo-service snapshot, but the canonical product-service remains unverified
+overall: PASS — all CP8 authorization checks pass for the user-selected catalogo-service snapshot; JWT cryptography, live infrastructure, and Product API parity are outside this evidence
 ```
 
 ## Completion
@@ -59,9 +59,10 @@ overall: NEEDS_SIGNOFF — the tests pass against the available catalogo-service
   snapshot.
 - [x] Assert both the denial response and that the protected stock use case is
   not invoked.
-- [ ] Confirm the authoritative application repository and rerun equivalent
-  tests against its actual `product-service`.
-- [ ] Record canonical-service evidence before marking CP8 complete.
+- [x] Confirm the selected CP8 target: the local `catalogo-service` snapshot.
+- [x] Record test evidence and the API/runtime limitations.
 
-CP8 remains **provisional** until the correct Product service is identified and
-verified.
+CP8 is **complete for the selected snapshot**. The mismatch between its
+`/api/productos` and `/api/inventario` routes and the documented Product API
+remains a separate scope limitation; this report does not claim Product API
+contract parity, JWT cryptographic validation, or live infrastructure testing.

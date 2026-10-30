@@ -33,7 +33,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP5 — Peer review | Review prepared; submission pending | [`05-peer-review.md`](./05-peer-review.md) records review of teammate PR #66 and a non-blocking scoring suggestion; the formal GitHub review has not been submitted. |
 | CP6 — Review feedback | Partially evidenced | [`06-review-feedback.md`](./06-review-feedback.md) records real feedback and the author's response on teammate PR #66; the participant's own CP5 review remains unsubmitted. |
 | CP7 — Refine security backlog | Refinement prepared; GitHub updates pending | [`07-security-backlog-refinement.md`](./07-security-backlog-refinement.md) contains testable criteria, target STRIDE/risk labels, PR links, and cross-links; issue edits and team Project membership still need applying and verifying. |
-| CP8 — Negative test | Provisional test passed; canonical service unverified | [`08-negative-authorization-test.md`](./08-negative-authorization-test.md) records three passing MockMvc checks against the available `catalogo-service` snapshot. Identify the authoritative `product-service` and verify there before marking CP8 complete. |
+| CP8 — Negative test | Complete for selected `catalogo-service` snapshot | [`08-negative-authorization-test.md`](./08-negative-authorization-test.md) records three passing MockMvc checks. The snapshot's API differs from the documented `/api/v1/products` contract; JWT cryptography and live infrastructure remain unverified. |
 | CP9 — Personal reflection | Student-authored | Write the reflection personally; AI must not draft or rewrite it. |
 
 ## Selected trust boundary
@@ -44,10 +44,11 @@ frontend to the product-service API. Issue
 claim and scope: analyze how browser requests reach the service and how product
 and inventory data are protected.
 
-The local microservices snapshot uses a `catalogo-service` implementation with
-product and inventory routes; the documentation distinguishes a planned
-`product-service`. Confirm which implementation and API contract are
-authoritative before attributing controls or findings to `product-service`.
+For CP8, the user selected the local microservices snapshot's `catalogo-service`
+as the test target. It has product and inventory routes but does not implement
+the documented `product-service` `/api/v1/products` contract. CP8 evidence
+therefore applies only to the selected snapshot; it must not be attributed to
+the documented Product API.
 
 The issue is visible in the user's supplied screenshot. A complete check of
 all issues and pull requests in the documentation repository has not been
