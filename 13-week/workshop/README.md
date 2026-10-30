@@ -9,10 +9,11 @@ design. Do not mark a checkpoint complete without its required evidence.
 - TRUST_BOUNDARY: React administrative frontend → product-service
 - TRUST_BOUNDARY_ISSUE: https://github.com/code-corhuila/bysellens-docs/issues/56
 - WORK_BRANCH: main
-- PULL_REQUEST_URL: [PENDING]
+- PULL_REQUEST_URL: https://github.com/code-corhuila/bysellens-docs/pull/70
 - SECURITY_STORY_1_URL: https://github.com/code-corhuila/bysellens-docs/issues/57
 - SECURITY_STORY_2_URL: https://github.com/code-corhuila/bysellens-docs/issues/58
-- SECURITY_STORY_3_URL: [PENDING: create the auditability issue; draft in 03-security-backlog.md]
+- SECURITY_STORY_3_URL: https://github.com/code-corhuila/bysellens-docs/issues/68
+- STORIES: #57, #58, and #68 — https://github.com/code-corhuila/bysellens-docs/pull/70
 - REFLECTION_DOCUMENT_URL: [PENDING: provide the Week 13 document link]
 - DOCS_REPOSITORY: https://github.com/code-corhuila/bysellens-docs
 - STRIDE_DOCUMENT_URL: https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/main/13-week/workshop/02-stride.md
@@ -27,11 +28,12 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP0 — Preparation | In progress | Issue #56 records the selected boundary; repository branches, PRs, and documentation-repo access remain unverified. |
 | CP1 — Attack surface | Draft prepared | `01-attack-surface.md`; confirm the authoritative implementation repository before treating the snapshot as canonical. |
 | CP2 — STRIDE | Analysis complete (design-based) | [`02-stride.md`](./02-stride.md) contains all six categories, prioritization and conditional residual-risk targets; physical-book page citation remains pending verification. |
-| CP3 — Security stories | In progress | [`03-security-backlog.md`](./03-security-backlog.md) maps existing issues #57/#58 and drafts a distinct auditability story; its tracker issue is pending. |
+| CP3 — Security stories | Three issues created; board status pending | [`03-security-backlog.md`](./03-security-backlog.md) maps issues #57, #58, and #68 to distinct STRIDE threats. |
 | CP4 — Security CI | Design prepared; implementation pending | [`04-security-ci.md`](./04-security-ci.md) records the Java/Maven CI design and authorization matrix for the available snapshot; the authoritative application repository is not confirmed, so no workflow or auth test is claimed as implemented. |
 | CP5 — Peer review | Review prepared; submission pending | [`05-peer-review.md`](./05-peer-review.md) records review of teammate PR #66 and a non-blocking scoring suggestion; the formal GitHub review has not been submitted. |
 | CP6 — Review feedback | Partially evidenced | [`06-review-feedback.md`](./06-review-feedback.md) records real feedback and the author's response on teammate PR #66; the participant's own CP5 review remains unsubmitted. |
-| CP7–CP8 — Completion | Pending | Require the remaining review follow-up, executed checks, and recorded output. |
+| CP7 — Refine security backlog | Refinement prepared; GitHub updates pending | [`07-security-backlog-refinement.md`](./07-security-backlog-refinement.md) contains testable criteria, target STRIDE/risk labels, PR links, and cross-links; issue edits and team Project membership still need applying and verifying. |
+| CP8 — Negative test | Pending | Requires the CP4 negative authorization test to run against the real service and its output to be recorded. |
 | CP9 — Personal reflection | Student-authored | Write the reflection personally; AI must not draft or rewrite it. |
 
 ## Selected trust boundary

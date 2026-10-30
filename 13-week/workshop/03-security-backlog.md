@@ -3,9 +3,10 @@
 **Owner:** Luis Gasca Bonilla (`@luisGascaB`)
 **Trust boundary:** React administrative frontend → `product-service`
 **Threat-model issue:** [Bysellens docs #56](https://github.com/code-corhuila/bysellens-docs/issues/56)
-**Status:** Two existing security issues are mapped below. The third story is
-drafted here; its tracker issue is pending. No implementation or runtime
-behavior is claimed as verified.
+**Status:** Three security issues now exist and are mapped below. CP7 refinement
+and team-board membership are tracked separately in
+[`07-security-backlog-refinement.md`](./07-security-backlog-refinement.md).
+No implementation or runtime behavior is claimed as verified.
 
 ## Prioritization
 
@@ -17,7 +18,7 @@ Product service implementation and its controls have not been verified.
 |---|---|---|---:|---|
 | 1 | Enforce authentication and ADMIN authorization | Spoofing, Elevation of Privilege, and unauthorized disclosure of protected reads | P0 — 9/9 in issue #57; CP2 separately estimates P1 — 6/9 | Existing issue [#57](https://github.com/code-corhuila/bysellens-docs/issues/57) |
 | 2 | Validate stock updates on the server | Tampering | P1 — 6/9 | Existing issue [#58](https://github.com/code-corhuila/bysellens-docs/issues/58) |
-| 3 | Audit stock changes with attributable events | Repudiation | P2 — 4/9 | Draft below; tracker issue pending |
+| 3 | Audit stock changes with attributable events | Repudiation | P2 — 4/9 | Existing issue [#68](https://github.com/code-corhuila/bysellens-docs/issues/68) |
 
 **Scoring note:** Issue #57 records Probability 3/3 × Impact 3/3 (P0), while
 CP2 estimates Probability 2/3 × Impact 3/3 (P1) for Spoofing and Elevation of
@@ -75,9 +76,8 @@ the operation and rules, but the route and runtime behavior remain unverified.
 
 ## Story 3 — Record attributable stock-change audit events
 
-**Tracker:** **Pending.** No matching issue for auditable stock changes in
-`product-service` was found in the repository issue search. This story is a
-draft, not a created or assigned issue.
+**Tracker:** [Issue #68](https://github.com/code-corhuila/bysellens-docs/issues/68)
+— `Add attributable audit events for product stock updates - @luisGascaB`.
 **STRIDE:** Repudiation.
 **Initial risk:** Probability 2/3 × Impact 2/3 = 4/9 (P2), matching the CP2
 estimate.
@@ -86,7 +86,7 @@ estimate.
 reliable, attributable audit event, so that authorized and rejected changes
 can be investigated without exposing credentials.
 
-**Acceptance criteria proposed for the tracker issue:**
+**Acceptance criteria currently recorded in the issue:**
 
 1. Every accepted stock update records the verified actor ID, product ID,
    action, outcome, timestamp, and a request correlation ID; accepted changes
