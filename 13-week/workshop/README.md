@@ -10,9 +10,9 @@ design. Do not mark a checkpoint complete without its required evidence.
 - TRUST_BOUNDARY_ISSUE: https://github.com/code-corhuila/bysellens-docs/issues/56
 - WORK_BRANCH: main
 - PULL_REQUEST_URL: [PENDING]
-- SECURITY_STORY_1_URL: [PENDING]
-- SECURITY_STORY_2_URL: [PENDING]
-- SECURITY_STORY_3_URL: [PENDING]
+- SECURITY_STORY_1_URL: https://github.com/code-corhuila/bysellens-docs/issues/57
+- SECURITY_STORY_2_URL: https://github.com/code-corhuila/bysellens-docs/issues/58
+- SECURITY_STORY_3_URL: [PENDING: create the auditability issue; draft in 03-security-backlog.md]
 - REFLECTION_DOCUMENT_URL: [PENDING: provide the Week 13 document link]
 - DOCS_REPOSITORY: https://github.com/code-corhuila/bysellens-docs
 - STRIDE_DOCUMENT_URL: https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/main/13-week/workshop/02-stride.md
@@ -27,7 +27,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP0 — Preparation | In progress | Issue #56 records the selected boundary; repository branches, PRs, and documentation-repo access remain unverified. |
 | CP1 — Attack surface | Draft prepared | `01-attack-surface.md`; confirm the authoritative implementation repository before treating the snapshot as canonical. |
 | CP2 — STRIDE | Analysis complete (design-based) | [`02-stride.md`](./02-stride.md) contains all six categories, prioritization and conditional residual-risk targets; physical-book page citation remains pending verification. |
-| CP3 — Security stories | Pending | Rank evidence-based STRIDE risks and check existing issues before creating any. |
+| CP3 — Security stories | In progress | [`03-security-backlog.md`](./03-security-backlog.md) maps existing issues #57/#58 and drafts a distinct auditability story; its tracker issue is pending. |
 | CP4 — Security CI | Pending | Select tools and an authorization test from the confirmed implementation and its real protected operations. |
 | CP5 — Peer review | Pending | Requires a teammate's actual pull request and approval before posting a review. |
 | CP6–CP8 — Completion | Pending | Requires real review feedback, executed checks, and recorded output. |
