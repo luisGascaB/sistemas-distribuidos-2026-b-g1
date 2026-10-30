@@ -8,14 +8,14 @@ design. Do not mark a checkpoint complete without its required evidence.
 - GITHUB_USER: luisGascaB
 - TRUST_BOUNDARY: React administrative frontend → product-service
 - TRUST_BOUNDARY_ISSUE: https://github.com/code-corhuila/bysellens-docs/issues/56
-- WORK_BRANCH: hu-luisGascaB-main
+- WORK_BRANCH: main
 - PULL_REQUEST_URL: [PENDING]
 - SECURITY_STORY_1_URL: [PENDING]
 - SECURITY_STORY_2_URL: [PENDING]
 - SECURITY_STORY_3_URL: [PENDING]
 - REFLECTION_DOCUMENT_URL: [PENDING: provide the Week 13 document link]
 - DOCS_REPOSITORY: https://github.com/code-corhuila/bysellens-docs
-- STRIDE_DOCUMENT_URL: https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/hu-luisGascaB-main/13-week/workshop/02-stride.md
+- STRIDE_DOCUMENT_URL: https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/main/13-week/workshop/02-stride.md
 - PEER_REVIEW_URL: [PENDING: only after reviewing a real teammate PR]
 - BOOK_REFERENCE: [PENDING: verify page(s) in the physical copy before citing]
 <!-- CONFIG-END -->
