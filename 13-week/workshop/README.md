@@ -14,7 +14,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 - SECURITY_STORY_2_URL: https://github.com/code-corhuila/bysellens-docs/issues/58
 - SECURITY_STORY_3_URL: https://github.com/code-corhuila/bysellens-docs/issues/68
 - STORIES: #57, #58, and #68 — https://github.com/code-corhuila/bysellens-docs/pull/70
-- REFLECTION_DOCUMENT_URL: [PENDING: add the student's Google Docs link]
+- REFLECTION_DOCUMENT_URL: https://docs.google.com/document/d/1NmjFL-02o9-4KQBRptmkeaUBttE9C7X0tMg_Bcog4kE/edit?tab=t.0
 - DOCS_REPOSITORY: https://github.com/code-corhuila/bysellens-docs
 - STRIDE_DOCUMENT_URL: https://github.com/luisGascaB/sistemas-distribuidos-2026-b-g1/blob/main/13-week/workshop/02-stride.md
 - PEER_REVIEW_URL: https://github.com/code-corhuila/bysellens-docs/pull/66 (review prepared; GitHub submission pending, see 05-peer-review.md)
@@ -34,7 +34,7 @@ design. Do not mark a checkpoint complete without its required evidence.
 | CP6 — Review feedback | Partially evidenced | [`06-review-feedback.md`](./06-review-feedback.md) records real feedback and the author's response on teammate PR #66; the participant's own CP5 review remains unsubmitted. |
 | CP7 — Refine security backlog | Refinement prepared; GitHub updates pending | [`07-security-backlog-refinement.md`](./07-security-backlog-refinement.md) contains testable criteria, target STRIDE/risk labels, PR links, and cross-links; issue edits and team Project membership still need applying and verifying. |
 | CP8 — Negative test | Complete for selected `catalogo-service` snapshot | [`08-negative-authorization-test.md`](./08-negative-authorization-test.md) records three passing MockMvc checks. The snapshot's API differs from the documented `/api/v1/products` contract; JWT cryptography and live infrastructure remain unverified. |
-| CP9 — Personal reflection | Written by student; document link pending | The student reports that the reflections are written. Add the Google Docs URL to `REFLECTION_DOCUMENT_URL` after confirming it is shared with the instructor as Editor. |
+| CP9 — Personal reflection | Written by student; document link recorded | The student reports that the reflections are written. Verify the Google Docs document is shared with the instructor as Editor; complete the weekly status file and final Moodle submission. |
 
 ## Selected trust boundary
 
