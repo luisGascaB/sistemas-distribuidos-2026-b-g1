@@ -8,7 +8,7 @@
 <!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
 - FULL_NAME: Luis Eduardo Gasca Bonilla
 - GITHUB_USER: luisGascaB
-- TEAM: Group 1
+- TEAM:  G1 - BySellens
 - SPRINT_GOAL: Improve Bysellens security through threat modeling, access control, inventory validation, and security testing.
 <!-- CONFIG-END -->
 
