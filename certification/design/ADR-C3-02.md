@@ -1,4 +1,5 @@
-# ADR-C3-02: <title>
+
+# ADR-C3-02: [Decision title]
 
 ## Status
 
@@ -6,11 +7,11 @@ Proposed
 
 ## Context
 
-[Describe the verified project context, the problem to solve, and the constraints. Add links or paths to supporting evidence.]
+Describe the verified project context, the problem to solve, and the constraints that require this decision. Explain which problem in the system motivates the decision and cite the relevant section of the architecture design note, including links or paths to supporting evidence.
 
 ## Decision
 
-[State the decision for the team to review. Replace this prompt only after the team has made or confirmed the decision.]
+State the decision in one paragraph. Replace this prompt only after the team has made or confirmed the decision.
 
 ## Alternatives considered
 

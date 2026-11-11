@@ -1,3 +1,4 @@
+
 # Certification C3 — Luis Eduardo Gasca Bonilla
 
 ## Cover
@@ -6,13 +7,15 @@
 |---|---|
 | Full name | Luis Eduardo Gasca Bonilla |
 | GitHub user | luisGascaB |
-| Group (G1 or G2) | G1 |
+| Group | G1 |
 | Team | Bysellens |
-| Team -docs repository (full URL) | https://github.com/code-corhuila/bysellens-docs |
-| Course (exact name) | Huawei HCCDP-Solution Architectures Course |
+| Team -docs repository | https://github.com/code-corhuila/bysellens-docs |
+| Course | Huawei HCCDP-Solution Architectures Course |
 | Course link | [Add the official course URL] |
 | Start date (YYYY-MM-DD) | [YYYY-MM-DD] |
 | Completion date (YYYY-MM-DD) | [YYYY-MM-DD] |
+
+Complete all remaining fields with the actual information. Replace every placeholder before submission.
 
 ## Study log
 
@@ -30,9 +33,9 @@ Record actual study sessions only. Use at least 10 different dates, no more than
 | [YYYY-MM-DD] | [ ] | [Complete manually] | [Evidence filename] |
 | [YYYY-MM-DD] | [ ] | [Complete manually] | [Evidence filename] |
 | [YYYY-MM-DD] | [ ] | [Complete manually] | [Evidence filename] |
-| **Total** | **[Enter actual total: 50–60 hours]** |  |  |
+| **Total** | **[Enter actual total: 50–60 hours]** | | |
 
-Upload your genuine screenshots using these exact filenames:
+Upload genuine screenshots using these exact filenames:
 
 - `evidence/00-enrollment.png`
 - `evidence/01-chapter-01.png`
@@ -52,24 +55,26 @@ Upload your genuine screenshots using these exact filenames:
 
 ## Labs
 
-Enter the official lab names and your own factual results. Do not report a build, failure, or fix until you have completed and verified it.
+Enter official lab names and factual results. Do not report a build, failure, or fix until you have completed and verified it.
 
 | Evidence file | Lab name | What I built (one sentence) | What failed first and how I fixed it (one sentence) |
 |---|---|---|---|
-| `evidence/15-lab-1.png` | [Enter official lab name] | [Write one factual sentence after completing the lab.] | [Write one factual sentence after completing the lab; do not claim a failure if none occurred.] |
-| `evidence/16-lab-2.png` | [Enter official lab name] | [Write one factual sentence after completing the lab.] | [Write one factual sentence after completing the lab; do not claim a failure if none occurred.] |
-| `evidence/17-lab-3.png` | [Enter official lab name] | [Write one factual sentence after completing the lab.] | [Write one factual sentence after completing the lab; do not claim a failure if none occurred.] |
-| `evidence/18-lab-4.png` | [Enter official lab name] | [Write one factual sentence after completing the lab.] | [Write one factual sentence after completing the lab; do not claim a failure if none occurred.] |
+| `evidence/15-lab-1.png` | [Official lab name] | [Factual description] | [Factual description of failure and fix, or state that none occurred] |
+| `evidence/16-lab-2.png` | [Official lab name] | [Factual description] | [Factual description of failure and fix, or state that none occurred] |
+| `evidence/17-lab-3.png` | [Official lab name] | [Factual description] | [Factual description of failure and fix, or state that none occurred] |
+| `evidence/18-lab-4.png` | [Official lab name] | [Factual description] | [Factual description of failure and fix, or state that none occurred] |
 
 ## Final exam
 
-- **Score:** [Enter the actual score]
+- **Score:** [Actual score]
 - **Date (YYYY-MM-DD):** [YYYY-MM-DD]
 - **Evidence file:** `evidence/19-final-exam.png`
 
 Place the original certificate downloaded from Huawei Talent at `certification/certificate.pdf`. Do not use a recreated or blank certificate.
 
 ## Skills summary
+
+Write 5 to 7 lines in English, in first person, naming at least three concrete design techniques from the course. Describe only skills you actually learned and practiced.
 
 - I can explain [an architecture concept I learned and can describe].
 - I can apply [a principle or method I practiced].
